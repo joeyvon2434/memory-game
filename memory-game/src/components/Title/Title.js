@@ -4,7 +4,7 @@ import "./Title.css";
 class Title extends React.Component {
     render () {
         return (
-            <div>Title, ready to...uhhhh.... title</div>
+            <div className="Title">The Simpsons Memory Game</div>
         );
     }
 }

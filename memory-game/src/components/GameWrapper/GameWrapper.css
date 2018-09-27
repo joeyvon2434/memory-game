@@ -1,0 +1,21 @@
+.Wrapper {
+    background-image: linear-gradient(to right, #0f497c,#4f84b3);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    padding: 0;
+    margin: 0;
+}
+
+.Barney {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+}
+
+.Ned {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}

@@ -1,0 +1,8 @@
+.GameCard {
+    border: 1px solid rgb(82, 82, 82);
+    box-shadow: 0 3px 3px rgb(0, 0, 0);
+}
+
+.GameCard img {
+    margin: 3px 3px 0 3px;
+}

@@ -1,0 +1,10 @@
+.Title {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 3px 3px rgb(216, 216, 216);
+    color: #1F4873;
+}

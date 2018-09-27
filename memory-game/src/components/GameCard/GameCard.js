@@ -3,7 +3,7 @@ import "./GameCard.css";
 
 const GameCard = props => {
     return (
-            <div>
+            <div className="GameCard">
                 <img 
                     src={props.url} 
                     alt={`This is where ${props.name} should be.` } 

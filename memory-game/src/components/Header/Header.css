@@ -1,0 +1,10 @@
+.Header {
+    display: grid;
+    grid-template-columns: 15% 60% 15%;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+    padding: 20px;
+    background:#F5C852;
+    box-shadow: 0 3px 5px rgb(22, 22, 22);
+}
