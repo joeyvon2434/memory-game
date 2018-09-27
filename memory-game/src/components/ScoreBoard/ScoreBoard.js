@@ -4,7 +4,10 @@ import "./ScoreBoard.css";
 class ScoreBoard extends React.Component {
     render () {
         return (
-            <div>ScoreBoard Here</div>
+            <div>
+                Current Score: {this.props.currentClicks}
+                Top Score: {this.props.topScore}
+            </div>
         );
     }
 }

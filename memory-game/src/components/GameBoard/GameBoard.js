@@ -7,7 +7,7 @@ class GameBoard extends React.Component {
   
    render () {
        return (
-            <div>
+            <div className="GameBoard">
                 {this.props.pictures.map(picture => ( 
                 <GameCard 
                     id={picture.id}

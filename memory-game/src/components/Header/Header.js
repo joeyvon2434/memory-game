@@ -10,7 +10,10 @@ class Header extends React.Component {
             <div>I am a header
                 <Instructions />
                 <Title />
-                <ScoreBoard />
+                <ScoreBoard 
+                    currentClicks={this.props.currentClicks}
+                    topScore={this.props.topScore}
+                />
             </div>
         );
     }
