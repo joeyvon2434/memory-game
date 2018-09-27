@@ -26,14 +26,8 @@ class GameWrapper extends React.Component {
         //Cut a random component from the array and populate a new randomized array to load into the game state
         while (tempArray.length > 0) {
         let randomPicture = tempArray.splice(Math.floor(Math.random() * tempArray.length), 1)[0];
-            console.log("Random Picture XXXXXXXXXXXXXXXX")
-        console.log(randomPicture);
-
         newPicturesArray.push(randomPicture);
         }
-
-        console.log("New Pictures Array XXXXXXXXXXXXXXXX")
-        console.log(newPicturesArray);
 
         //Set the state to reflect the randomized array order
         this.setState({
@@ -41,8 +35,10 @@ class GameWrapper extends React.Component {
         });
     }
 
-    handleClick = () => {
-
+    //Listens for a click event, then updates the game state based on whether the picture has been clicked or not
+    handleClick = (id) => {
+        console.log(`I've been clicked!!! ${id}`);
+        this.shuffleArray(this.state.picturesArray);
     }
 
     resetGame = () => {
@@ -58,7 +54,9 @@ class GameWrapper extends React.Component {
         return (
             <div>
             <Header />
-            <GameBoard pictures={this.state.picturesArray}/>
+            <GameBoard pictures={this.state.picturesArray}
+            onClick={id => this.handleClick(id)}
+            />
             <Footer />
             </div>
         );
