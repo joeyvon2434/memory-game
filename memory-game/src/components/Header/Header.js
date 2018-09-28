@@ -8,7 +8,9 @@ class Header extends React.Component {
     render() {
         return (
             <div className="Header">
-                <Instructions />
+                <Instructions 
+                onClick={()=> this.props.onClick()}
+                />
                 <Title />
                 <ScoreBoard 
                     currentClicks={this.props.currentClicks}

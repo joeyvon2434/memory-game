@@ -5,9 +5,10 @@ class ScoreBoard extends React.Component {
     render () {
         return (
             <div className="ScoreBoard">
-                <div>Current Score: {this.props.currentClicks}</div>
-                <br />
-                <div>Top Score: {this.props.topScore}</div>
+                <div className="score-title">Current Score:</div>
+                <div className="score-title">Top Score:</div>
+                <div className="grid-item">{this.props.currentClicks}</div>
+                <div className="grid-item">{this.props.topScore}</div>
             </div>
         );
     }

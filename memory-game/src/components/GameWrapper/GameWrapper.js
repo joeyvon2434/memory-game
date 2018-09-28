@@ -3,14 +3,18 @@ import "./GameWrapper.css";
 import Header from "../Header";
 import GameBoard from "../GameBoard";
 import Footer from "../Footer";
-import pictureData from "../../pictureData.json"
+import pictureData from "../../pictureData.json";
+import InstructionsBox from "../InstructionsBox";
+import LoseBox from "../LoseBox";
 
 
 class GameWrapper extends React.Component {
     state = {
         picturesArray: [],
         currentClicks: 0,
-        topScore: 0
+        topScore: 0,
+        showInstructions: false,
+        showLoseBox: false
     }
 
     //Ensure the pictureData is poulated on page load
@@ -48,6 +52,7 @@ class GameWrapper extends React.Component {
         });
         //check if the item has already been clicked
         if (tempArray[currentIndex].clicked === true) {
+            this.showLoseBox();
             this.resetGame(this.state.currentClicks);
         } else {
             //modify the clicked object to indicate it was clicked and add one to the click count
@@ -78,12 +83,41 @@ class GameWrapper extends React.Component {
         }
     }
 
+      //Function to switch the state of showInstructions to display instructions
+    showInstructions = () => {
+        this.setState({
+            showInstructions: true
+        });
+    }
+
+     //Function to switch the state of showInstructions to hide the instructions
+    hideInstructions = () => {
+        this.setState({
+            showInstructions: false
+        });
+    }
+
+      //Function to switch the state of showInstructions to display instructions
+      showLoseBox = () => {
+        this.setState({
+            showLoseBox: true
+        });
+    }
+
+     //Function to switch the state of showInstructions to hide the instructions
+    hideLoseBox = () => {
+        this.setState({
+            showLoseBox: false
+        });
+    }
+
     render() {
         return (
             <div className="Wrapper">
                 <Header
                     currentClicks={this.state.currentClicks}
                     topScore={this.state.topScore}
+                    onClick={() => this.showInstructions()}
                 />
                 <img className="Barney" src="/barney.png"  alt="Barney is too drunk, so didn't show up."/>
                 <img className="Ned" src="/ned.png"  alt="Ned is at church, so he didn't show up."/>
@@ -91,6 +125,13 @@ class GameWrapper extends React.Component {
                     className="GameBoard"
                     pictures={this.state.picturesArray}
                     onClick={id => this.handleClick(id)}
+                />
+                <InstructionsBox 
+                showInstructions={this.state.showInstructions}
+                onClick={() => this.hideInstructions()}
+                />
+                <LoseBox showLoseBox={this.state.showLoseBox}
+                onClick={() => this.hideLoseBox()}
                 />
                 <Footer />
             </div>
